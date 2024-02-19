@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--******************** CSS Starts ********************-->
+<style>
+body {
+  background-image: url('/static/images/book.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 260px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  display: block;
+  transition: 0.2s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+
+}
+
+.btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 17px;
+  padding: 9px 17px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #097DBB;
+  text-decoration: none;
+}
+
+<!--********** Start Maintable code ************-->
+
+#MainTable {
+
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+}
+
+#MainTable td, #MainTable th {
+  border: 1px solid ##121111;
+  padding: 8px;
+}
+
+#MainTable tr:hover {background-color: #ddd;}
+
+#MainTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CB9F3;
+  color: white;
+  width: 20%;
+  font-size: 15px;
+
+}
+
+<!--********** End Maintable code ************-->
+
+<!--********** End addbook code ************-->
+#addbook {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 40%;
+}
+#addbook label,#updatebook label,#deletebook label{
+  border: 1px solid #ddd;
+  padding: 2px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CB9F3;
+  color: white;
+  width: 15%;
+  font-size: 20px;
+  display: inline-block;
+  margin-left: 15px;
+}
+#addbook button,#updatebook button,#deletebook button {
+  border: 2px solid #ddd;
+  padding: 2px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #088533;
+  color: white;
+  width: 10%;
+  font-size: 20px;
+}
+#deletebook button {
+background-color: #e60c0c;
+}
+#addbook a,#updatebook a,#deletebook a{
+  font-size: 25px;
+  color: #0043ff;
+}
+#addbook input[type="text"],#updatebook input[type="text"],#deletebook input[type="text"] {
+    border: 1px solid #ddd;
+    padding-block: 15px;
+    padding-inline: 24px;
+    height: 10px
+    padding: 2px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    width: 35%;
+    font-size: 20px;
+    display: inline-block;
+    margin-left: 15px;
+}
+<!--********** End addbook code ************-->
+
+#contentt {
+  /*padding: 20px;*/
+  transition: margin-left 0.7s;
+  overflow: hidden;
+  /*width: 100%;*/
+}
+
+.head {
+  width: 100%;
+  height: 100%;
+  align: center;
+  font-family: "Times New Roman", Times, serif;
+
+}
+.infooter{
+  position: fixed;
+  width: 100%;
+  bottom: 1px;
+  height: 26px;
+  line-height: 26px;
+  background-color: black;
+  text-align: center;
+  color: white;
+  font-size: 15px;
+}
+
+.developer{
+position: absolute;
+bottom: 7%;
+display: flex;
+color: white;
+}
+
+</style>
+<body>
+<span style="font-size:30px;cursor:pointer;color:black;" onclick="openNav()">&nbsp; &#9776;</span>
+  <div id="contentt" style="margin-left: 260px;transition: margin-left 0.4s;">
+    <div id="menu" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href='/' type=submit>Home</a><br>
+      <a href='/get' type=submit>Get Book</a><br>
+      <a href="/add" type=submit id=addbook>Add Book</a><br>
+      <a href="/update" type=submit id=updatebook>Update Book</a><br>
+      <a href="delete" type=submit id=deletebook>Delete Book</a><br>
+      <p class="developer" style="text-color:white">@ Developed by Indrajeet Phutane </p>
+    </div>
+    {% block body %} {% endblock %}
+  </div>
+</body>
+</html>

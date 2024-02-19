@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends "menu_bar.html" %}
+{% block body %}
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>update</title>
+  </head>
+  <body>
+    <section class="updatebook" id="updatebook"> <!---'id' used to call hyperlink-->
+      <div class="container">
+        <div class="main-text">
+          <h1><span>U</span>pdate Book</h1>
+        </div>
+        <div class="col-md-6 py-30 py-md-0">
+          <form action="{{ url_for('update_book')}}" method="POST">
+            <label for="bookid">Book ID:</label>
+            <input type="text" id="bookid" name="bookid" placeholder="Book ID"><br>
+            <label for="booktitle">Book Title:</label>
+            <input type="text" id="booktitle" name="booktitle" placeholder="Book Title"><br>
+            <label for="bookauthor">Book Author:</label>
+            <input type="text" id="bookauthor" name="bookauthor" placeholder="Book Author"><br>
+            <button type="submit">Submit</button>
+        </div>
+      </div>
+      <a href="/">Home</a>
+    </section>
+  </body>
+</html>
+{% endblock %}

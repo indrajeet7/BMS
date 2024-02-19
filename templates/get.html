@@ -1,0 +1,33 @@
+{% extends "menu_bar.html" %}
+{% block body %}
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>get</title>
+    </head>
+
+  <body>
+  <div class="head" align="center" style="color:Black;">
+      <h1>Book Details</h1>
+  </div>
+  <div align="center" id="gettable">
+      <table border="1" width="60%" align="center" id="MainTable" style="text-align:center;" >
+        <tr>
+          <th style="text-align:center"> ID</th>
+          <th style="text-align:center"> Title</th>
+          <th style="text-align:center"> Author</th>
+        </tr>
+        {% for row in book_details %}
+        <tr>
+            {% for cell in row %}
+              <td>{{ cell }}</td>
+            {% endfor%}
+        </tr>
+         {% endfor%}
+      </table >
+    </div>
+    <a href="/">Home</a>
+  </body>
+</html>
+{% endblock %}

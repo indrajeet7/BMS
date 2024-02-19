@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "menu_bar.html" %}
+{% block body %}
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>add</title>
+  </head>
+  <body>
+    <section class="addbook" id="addbook"> <!---'id' used to call hyperlink-->
+      <div class="container">
+        <div class="main-text">
+          <h1><span>B</span>ook</h1>
+        </div>
+          <form action="{{ url_for('add_book')}}" method="post">
+            <label for="booktitle">Book Title:</label>
+            <input type="text" id="booktitle" name="booktitle" placeholder=" Book Title"><br>
+            <label for="bookauthor">Book Author:</label>
+            <input type="text" id="bookauthor" name="bookauthor" placeholder=" Book Author"><br>
+            <button type="submit">Submit</button>
+      </div>
+      <a href="/">Home</a>
+    </section>
+  </body>
+</html>
+{% endblock %}

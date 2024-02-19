@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "menu_bar.html" %}
+{% block body %}
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>delete</title>
+  </head>
+  <body>
+    <section class="deletebook" id="deletebook"> <!---'id' used to call hyperlink-->
+      <div class="container">
+        <div class="main-text">
+          <h1><span>D</span>elete book</h1>
+        </div>
+        <div class="col-md-6 py-30 py-md-0">
+          <form action="{{ url_for('delete_book')}}" method="POST">
+            <label for="bookid">Book ID:</label>
+            <input type="text" id="bookid" name="bookid" placeholder="Book ID">
+            <button type="submit">Submit</button>
+        </div>
+      </div>
+      <a href="/">Home</a>
+    </section>
+  </body>
+</html>
+{% endblock %}
